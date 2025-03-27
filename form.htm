@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="car-logo.jpg">
+    <title>Aditya Travels : Travel with Fun</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .contact-us {
+            text-align: center;
+            padding: 5rem;
+        }
+        .contact-us h1{
+             font-weight:bolder;
+            color: rgb(2, 2, 2);
+            box-shadow: black;
+        }
+        .contact-us h2 {
+            margin-bottom: 20px;
+        }
+        .contact-us .phone-numbers {
+            margin: 10px 0;
+            font-size: 1.2em;
+            color: #fffefe;
+        }
+        .contact-us .button-container {
+            margin: 20px 0;
+        }
+        .contact-us .button-container a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .contact-us .button-container a:hover {
+            background-color: #0056b3;
+        }
+        .form-container {
+            display: none;
+            padding: 20px;
+            background:rgba(0, 0, 0, 0.5);
+            color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            max-width: 600px;
+        }
+        .form-container h3 {
+            margin-bottom: 20px;
+        }
+        .form-container label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .form-container input, .form-container textarea, .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-container button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+        .nav-underline{
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 1rem;
+            background-color:rgba(0, 0, 0, 0) ;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <!-- Full-page video background -->
+    <video class="video-background" src="travel_video.mp4" autoplay muted loop></video>
+    <ul class="nav nav-underline" style="background-color:rgba(0, 0, 0, 0) ;;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="form.htm">Contact-Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="reviews.html">Reviews</a>
+        </li>
+      </ul>
+    <section class="section contact-us">
+        <h1>Contact Us</h1>
+        <div class="phone-numbers">
+            <p>Phone: 8369757676 / 8655585479</p>
+            <p class="email">Email :- adityatravels8429@gmail.com</p>
+    
+        </div>
+        <div class="button-container">
+            <a href="#" onclick="showForm('Booking From Pune')">Book from Pune</a>
+            <a href="#" onclick="showForm('Booking From Mumbai')">Book from Mumbai</a>
+            <a href="#" onclick="showForm('Booking For Outstation')">Book for Outstation</a>
+        </div>
+    </section>
+    <div id="form-container" class="form-container">
+        <h3>Booking Form</h3>
+        <form id="booking-form" action="https://formspree.io/f/mblrogwv" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="trip-type">Trip Type:</label>
+            <input type="text" id="trip-type" name="trip-type" readonly required>
+
+            <label for="Date">Travel Date:</label>
+            <input type="date" id="date" name="date" required>            
+            
+            <label for="details">Trip Details:</label>
+            <textarea id="details" name="details" rows="4" required></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        function showForm(tripType) {
+            document.getElementById('trip-type').value = tripType;
+            document.getElementById('form-container').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

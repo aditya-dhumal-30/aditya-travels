@@ -1,0 +1,194 @@
+*{
+    font-family: "Josefin Sans", serif;
+  font-optical-sizing: auto;
+  font-weight:weight;
+  font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Full-page video background */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Hero section styling */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background: rgba(0, 0, 0, 0.5); /* Overlay for better text visibility */
+    padding: 1rem;
+    flex-direction: column;
+}
+.hero h1 {
+    font-size: 4vw;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    animation: fadeInOut 10s infinite;
+}
+.hero p {
+    font-size: 1.5vw;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    max-width: 90%;
+    padding: 1rem;
+    margin-left: 1rem;
+}
+
+/* Navigation bar */
+.nav-underline {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    flex-wrap: wrap;
+    
+}
+.nav-underline li a {
+    color: white;
+    transition: 0.5s;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+.nav-underline li a:hover {
+    color: white;
+    font-size: larger;
+}
+
+/* About section */
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-image: url('about-background1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    padding: 2rem;
+    text-align: center;
+}
+.about-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem;
+}
+.about-section div {
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* Second background section */
+.second-background {
+    padding: 2rem;
+    background-image: url('about-background2.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.second-background img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Contact section */
+.contact {
+    text-align: center;
+    padding: 2rem;
+    border: black solid;
+}
+.contact a{
+    text-decoration: none;
+}
+.contact img {
+    border-radius: 50%;
+    margin-right: 1rem;
+    max-width: 40px;
+    height: auto;
+}
+.contact h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero {
+        height: auto;
+        padding: 3rem 1rem;
+    }
+    .hero h1 {
+        font-size: 6vw;
+    }
+    .hero p {
+        font-size: 2vw;
+    }
+    .nav-underline {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-section,
+    .second-background {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 4rem 1rem;
+    }
+    .hero h1 {
+        font-size: 7vw;
+    }
+    .hero p {
+        font-size: 3vw;
+    }
+    .contact img {
+        max-width: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: auto;
+        padding: 5rem 1rem;
+    }
+    .hero h1 {
+        font-size: 8vw;
+    }
+    .hero p {
+        font-size: 4vw;
+    }
+    .contact img {
+        max-width: 30px;
+    }
+    .nav-underline {
+        flex-direction: column;
+        align-items: center;
+    }
+}
